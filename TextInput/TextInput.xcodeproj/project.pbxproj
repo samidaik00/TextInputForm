@@ -16,6 +16,8 @@
 		44E1282B28A0FFA300992D07 /* TextInputUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E1282A28A0FFA300992D07 /* TextInputUITestsLaunchTests.swift */; };
 		44E1283B28A1003100992D07 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E1283A28A1003100992D07 /* TextInputView.swift */; };
 		44E1283D28A1007800992D07 /* TextInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E1283C28A1007800992D07 /* TextInputViewModel.swift */; };
+		44E1283F28A113F500992D07 /* TextGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E1283E28A113F500992D07 /* TextGenerator.swift */; };
+		44E1284128A115C500992D07 /* RandomTextGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E1284028A115C500992D07 /* RandomTextGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		44E1282A28A0FFA300992D07 /* TextInputUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		44E1283A28A1003100992D07 /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
 		44E1283C28A1007800992D07 /* TextInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputViewModel.swift; sourceTree = "<group>"; };
+		44E1283E28A113F500992D07 /* TextGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextGenerator.swift; sourceTree = "<group>"; };
+		44E1284028A115C500992D07 /* RandomTextGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTextGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 		44E1283828A0FFB600992D07 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				44E1283E28A113F500992D07 /* TextGenerator.swift */,
+				44E1284028A115C500992D07 /* RandomTextGenerator.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -288,7 +294,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				44E1283D28A1007800992D07 /* TextInputViewModel.swift in Sources */,
+				44E1284128A115C500992D07 /* RandomTextGenerator.swift in Sources */,
 				44E1281028A0FFA200992D07 /* ContentView.swift in Sources */,
+				44E1283F28A113F500992D07 /* TextGenerator.swift in Sources */,
 				44E1280E28A0FFA200992D07 /* TextInputApp.swift in Sources */,
 				44E1283B28A1003100992D07 /* TextInputView.swift in Sources */,
 			);
