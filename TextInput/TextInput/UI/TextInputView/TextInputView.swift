@@ -10,62 +10,31 @@ import SwiftUI
 
 extension TextInputView {
     public static func assemble() -> some View {
-        return TextInputView()
+        let viewModel = ViewModel(textGenerator: RandomTextGenerator())
+        return TextInputView(viewModel: viewModel)
     }
 }
 
 public struct TextInputView: View {
     
-    @State var text: String = String()
+    @StateObject var viewModel: ViewModel
     
     public var body: some View {
         NavigationView {
             VStack {
-                textEditor
-                fillButton
-                Spacer()
+                FormTextEditor(text: $viewModel.text, wordCount: viewModel.wordCount)
+                TextFillButton(action: viewModel.didPressFill)
             }
-        }
-    }
-    
-    private var textEditor: some View {
-        Form {
-            VStack {
-                TextEditor(text: $text)
-                    .foregroundColor(.secondary)
-                    .padding(.horizontal, -15)
-                
-                HStack {
-                    Spacer()
-                    Text("words count")
-                        .font(.caption)
+            .navigationTitle("Hi")
+            .toolbar {
+                ToolbarItemGroup(placement: .primaryAction) {
+                    Button {
+                        viewModel.reset()
+                    } label: {
+                        Image(systemName: "trash.fill")
+                    }
                 }
             }
         }
-        .background(Color.yellow)
-        .accessibilityIdentifier("text_editor")
-    }
-    
-    private var fillButton: some View {
-        Button {
-            //TODO: connect action to VM
-        } label: {
-            HStack {
-                Text("Fill me")
-                    .bold()
-                
-                Image(systemName: "chevron.right")
-            }
-            .frame(maxWidth: .infinity)
-            .foregroundColor(.white)
-            .font(.headline)
-        }
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(.blue)
-        )
-        .padding()
-        .accessibilityIdentifier("button_fill")
     }
 }
