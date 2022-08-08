@@ -22,12 +22,16 @@ class TextInputUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testControls() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let textEditor = app.textViews.allElementsBoundByIndex[0]
+        XCTAssert(textEditor.exists)
+        
+        let button = app.buttons["button_fill"]
+        XCTAssert(button.exists)
     }
 
     func testLaunchPerformance() throws {
